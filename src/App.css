@@ -2,12 +2,19 @@
   text-align: center;
 }
 
+.ColorBack {
+  height: 100vh;
+  background: rgb(21,20,38);
+  background: linear-gradient(90deg, rgba(21,20,38,1) 0%, rgba(43,43,50,0.9500175070028011) 43%, rgba(51,97,106,1) 100%);
+}
+
 .BoxEstilo {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-  background-color: #5d6a6d;
+  background: rgb(21,20,38);
+  background: linear-gradient(90deg, rgba(21,20,38,1) 0%, rgba(73,73,148,0.9500175070028011) 45%, rgba(70,188,212,1) 100%);
 }
 
 .App-logo {

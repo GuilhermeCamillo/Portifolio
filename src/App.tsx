@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 
 function App() {
-  const [value, setValue] = React.useState("one");
+  const [value, setValue] = useState(1);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  const renderComponents = () => {
+    switch (value) {
+      case 1:
+        return <Typography>UM</Typography>
+      case 2:
+        return <Typography>DOIS</Typography>
+      case 3:
+        return <Typography>TRÊS</Typography>
+      case 4:
+        return <Typography>QUATRO</Typography>
+    }
+  }
+
   return (
     <>
       <Box className="BoxEstilo">
@@ -17,13 +31,14 @@ function App() {
             value={value}
             onChange={handleChange}
           >
-            <Tab value="one" label="Home"></Tab>
-            <Tab value="two" label="Aplicativos"></Tab>
-            <Tab value="three" label="Curriculo"></Tab>
-            <Tab value="four" label="Sobre"></Tab>
+            <Tab value={1} label="Home"></Tab>
+            <Tab value={2} label="Aplicativos"></Tab>
+            <Tab value={3} label="Curriculo"></Tab>
+            <Tab value={4} label="Sobre"></Tab>
           </Tabs>
         </Box>
       </Box>
+      {renderComponents()}
     </>
   );
 }
